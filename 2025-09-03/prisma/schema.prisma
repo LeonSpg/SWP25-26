@@ -1,0 +1,43 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  questions Question[]
+}
+
+model Question {
+  id          Int       @id @default(autoincrement())
+  text        String
+  difficultyId Int
+  difficulty   Difficulty @relation(fields: [difficultyId], references: [id])
+  categoryId  Int
+  category    Category  @relation(fields: [categoryId], references: [id])
+
+  @@unique([text, categoryId]) // Frage innerhalb einer Kategorie einzigartig
+}
+
+model Difficulty {
+  id         Int        @id @default(autoincrement())
+  level      String     @unique
+  questions  Question[]
+}
+
+model SyncSelection {
+  id         Int      @id @default(1)
+  categoryId Int
+  category   Category @relation(fields: [categoryId], references: [id])
+}
