@@ -3,7 +3,7 @@
 
 <p align="left">
   <img
-    src="https://www.spengergasse.at/wp-content/uploads/2020/04/SpengerLogo_720px_weiss_neu-e1586334374714.png](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEmSqRrJXQbXmxg-GTZ0RiBNAZRxuaKuVwlQ&s)"
+    src="https://www.spengergasse.at/wp-content/uploads/2020/04/SpengerLogo_720px_weiss_neu-e1586334374714.png"
     alt="Spengergasse Logo"
     width="50"
   />
