@@ -1,7 +1,6 @@
 import { PrismaClient } from "model";
 import { faker } from "@faker-js/faker";
 const prisma = new PrismaClient();
-
 const ensurePassengers = 20000;
 const ensureAirports = 100;
 const ensurePlanes = 250;
